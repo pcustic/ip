@@ -54,7 +54,7 @@ class AritmParser(Parser):
         sljedeće = self.granaj(Ar.KRAJ, Ar.POT, Ar.PUTA, Ar.PLUS, Ar.ZATVORENA)
         if sljedeće == Ar.POT:
             self.pročitaj(Ar.POT)
-            p2 = self.potencija()
+            p2 = self.faktor()
             return AST(stablo='potencija', lijevo=p1, desno=p2)
         else:
             return p1
@@ -104,4 +104,5 @@ if __name__ == '__main__':
     testiraj('(2+3)^4+1')
     testiraj('(2*23+4)^(1+2)*(2+3)')
     testiraj('-2+3*4*(-2+3)^5+34')
+    testiraj('2^3^4')
     
